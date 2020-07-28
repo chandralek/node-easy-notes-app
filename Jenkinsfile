@@ -2,15 +2,14 @@ pipeline{
  agent any
 
  stages{
- stage('Build Package')
- {
- steps{
-   sh '''  npm install '''
+  stage('Build Package')
+          {
+           sh '''  npm install '''
+          }
+  stage('Start Application')
+          {
+           sh ''' node server.js '''
+          }
  }
+
  }
- stage('Start Application')
- {
-    sh ''' node server.js '''
- }
- }
-}
