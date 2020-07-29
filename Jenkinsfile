@@ -6,7 +6,7 @@ pipeline{
           {
            steps{
 
-           sh ''' docker-compose build'''
+           sh '''whoami; docker-compose build'''
            }
 
           }
