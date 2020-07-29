@@ -1,4 +1,4 @@
 FROM node
-COPY . /tmp
-RUN  npm install
-CMD  node server.js
+ADD . / tmp/
+RUN  (cd tmp/; npm install;)
+CMD  (cd tmp/; node server.js;)
