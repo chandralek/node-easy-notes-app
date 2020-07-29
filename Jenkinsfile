@@ -2,11 +2,11 @@ pipeline{
  agent any
 
  stages{
-  stage('Build Package')
+  stage('Build Image')
           {
            steps{
 
-           sh '''npm install'''
+           sh '''docker-compose build'''
            }
 
           }
@@ -14,9 +14,15 @@ pipeline{
           {
            steps{
 
-            sh '''node server.js'''
+            sh '''docker-compose up'''
            }
           }
+   stage('Run Api Tests')
+           {
+             steps{
+               sh '''python3 apiTest.py'''
+             }
+           }
  }
 
  }
