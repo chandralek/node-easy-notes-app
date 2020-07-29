@@ -6,7 +6,7 @@ pipeline{
           {
            steps{
 
-           sh '''sudo docker-compose build'''
+           sh ''' docker-compose build'''
            }
 
           }
@@ -14,7 +14,7 @@ pipeline{
           {
            steps{
 
-            sh '''sudo docker-compose up'''
+            sh ''' docker-compose up'''
            }
           }
    stage('Run Api Tests')
