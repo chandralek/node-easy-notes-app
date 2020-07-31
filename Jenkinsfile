@@ -6,7 +6,7 @@ pipeline{
           {
            steps{
 
-           sh '''whoami; docker-compose build'''
+           sh ''' docker-compose build'''
            }
 
           }
@@ -17,7 +17,7 @@ pipeline{
             sh ''' docker-compose up -d'''
            }
           }
-   stage('Run Api Tests')
+   stage('Run unit Tests')
            {
              steps{
                sh '''python3 apiTest.py'''
